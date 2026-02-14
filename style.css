@@ -1,0 +1,43 @@
+/* This sets the default font and removes weird browser spacing ... */
+body 
+{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* This styles the top navigation bar ... */
+header 
+{
+    background-color: #005f73;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* This styles the links in your navigation bar ... */
+header a 
+{
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+/* This is your first PC vs Mobile trick ... */
+main 
+{
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Adds breathing room between sections ... */
+section 
+{
+    margin-bottom: 2rem;
+}
