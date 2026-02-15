@@ -1,43 +1,29 @@
-/* This sets the default font and removes weird browser spacing ... */
+/* Main screen ... */
 body 
 {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    color: #333;
-}
-
-/* This styles the top navigation bar ... */
-header 
-{
-    background-color: #005f73;
-    color: white;
-    padding: 1rem 2rem;
+    background-color: #121212;
+    font-family: 'Courier New', Courier, monospace;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
-/* This styles the links in your navigation bar ... */
-header a 
+/* Text ... */
+.handle 
 {
-    color: white;
-    text-decoration: none;
-    margin-left: 15px;
-    font-weight: bold;
+    color: #ffffff;
+    font-size: 3rem;
+    cursor: default;
+    transition: all 0.3s ease-in-out; 
 }
 
-/* This is your first PC vs Mobile trick ... */
-main 
+/* Hover efect ... */
+.handle:hover 
 {
-    padding: 2rem;
-    max-width: 800px;
-    margin: auto;
-}
-
-/* Adds breathing room between sections ... */
-section 
-{
-    margin-bottom: 2rem;
+    color: #00ffcc;
+    transform: scale(1.2);
+    letter-spacing: 2px;
 }
