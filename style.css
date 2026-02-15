@@ -12,7 +12,7 @@ body
     overflow: hidden; 
 }
 
-/* Text ... */
+/* Centered text ... */
 .handle 
 {
     color: #ffffff;
@@ -27,7 +27,7 @@ body
     .handle { font-size: 2rem; }
 }
 
-/* Hover effect ... */
+/* Text hover effect ... */
 @media (hover: hover) and (pointer: fine) 
 {
     .handle:hover 
@@ -36,4 +36,68 @@ body
         transform: scale(1.2); 
         letter-spacing: 2px; 
     }
+}
+
+/* Four corner buttons ... */
+.edge-btn 
+{
+    position: absolute;
+    background-color: #121212;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* Buttons hover effect ... */
+.edge-btn:hover 
+{
+    background-color: #ffffff;
+    color: #121212;
+}
+
+
+/* Placing top button ... */
+.top-btn 
+{
+    top: 0;
+    left: 60px;
+    right: 60px;
+    height: 60px;
+}
+
+/* Placing bottom button ... */
+.bottom-btn
+{
+    bottom: 0;
+    left: 60px;
+    right: 60px;
+    height: 60px;
+}
+
+/* Placing left button ...  */
+.left-btn 
+{
+    left: 0;
+    top: 60px;
+    bottom: 60px;
+    width: 60px;
+    writing-mode: vertical-rl; 
+    transform: rotate(180deg);
+}
+
+/* Placing right button ... */
+.right-btn
+{
+    right: 0;
+    top: 60px;
+    bottom: 60px;
+    width: 60px;
+    writing-mode: vertical-rl; 
 }
