@@ -107,3 +107,21 @@ body
     writing-mode: vertical-rl;
     clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 calc(100% - 60px));
 }
+
+/* Other mobile button settings ... */
+.btn-icon { display: none; }
+.btn-text { display: inline; }
+
+/* PC button hover efect ... */
+@media (hover: hover) and (pointer: fine) 
+{    
+    .btn-icon { display: inline; }
+    .btn-text { display: none; }
+    .edge-btn:hover .btn-icon { display: none; }
+    .edge-btn:hover .btn-text { display: inline; }
+}
+
+/* Text/Symbol display settings ... */
+.left-btn .btn-icon, 
+.right-btn .btn-icon { writing-mode: horizontal-tb; }
+.left-btn .btn-icon { display: inline-block; transform: rotate(180deg); }
