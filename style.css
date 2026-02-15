@@ -43,7 +43,7 @@ body
     font-size: 3rem; 
     line-height: 1; 
     margin-top: 3px;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     cursor: default;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     transition: transform 0.3s ease-in-out, letter-spacing 0.3s ease-in-out, color 0.5s ease; 
@@ -77,9 +77,8 @@ body[data-device="Desktop"] .handle:hover
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-items: center;
     transition: all 0.3s ease;
 }
 
@@ -133,15 +132,21 @@ body[data-device="Desktop"] .handle:hover
     clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 calc(100% - 60px));
 }
 
-/* Other mobile button settings ... */
-.btn-icon { display: none; }
-.btn-text { display: inline; }
+/* Mobile buttons settings ... */
+.btn-icon, 
+.btn-text 
+{ 
+    grid-area: 1 / 1;
+    transition: opacity 0.5s ease;
+}
+.btn-icon { opacity: 0; }
+.btn-text { opacity: 1; }
 
-/* PC button hover efect (Desktop) ... */
-body[data-device="Desktop"] .btn-icon { display: inline-block; }
-body[data-device="Desktop"] .btn-text { display: none; }
-body[data-device="Desktop"] .edge-btn:hover .btn-icon { display: none; }
-body[data-device="Desktop"] .edge-btn:hover .btn-text { display: inline; }
+/* Desktop buttons hover efect ... */
+body[data-device="Desktop"] .btn-icon { opacity: 1; }
+body[data-device="Desktop"] .btn-text { opacity: 0; }
+body[data-device="Desktop"] .edge-btn:hover .btn-icon { opacity: 0; }
+body[data-device="Desktop"] .edge-btn:hover .btn-text { opacity: 1; }
 
 /* Text/Symbol display settings ... */
 .left-btn .btn-icon, 
