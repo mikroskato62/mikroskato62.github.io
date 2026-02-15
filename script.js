@@ -23,3 +23,17 @@ handleText.addEventListener('mouseleave', () =>
     clearInterval(colorInterval);
     document.documentElement.style.setProperty('--random-color', '#ffffff');
 }); 
+
+// Dynamic device detection and versions label ...
+const deviceLabel = document.getElementById("device-label");
+function detectDevice() 
+{
+    const width = window.innerWidth;
+    let deviceType = "Desktop";
+    if (width < 768) { deviceType = "Mobile"; } 
+    else if (width >= 768 && width <= 1024) { deviceType = "Tablet"; } 
+    else { deviceType = "Desktop"; }
+    deviceLabel.textContent = `[ ${deviceType} Version ]`;
+}
+detectDevice();
+window.addEventListener("resize", detectDevice);
