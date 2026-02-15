@@ -10,6 +10,7 @@ function detectDevice()
     else if (width >= 768 && width <= 1024) { currentDevice = "Tablet"; }
     else { currentDevice = "Desktop"; }
     deviceLabel.textContent = `[ ${currentDevice} Version ]`;
+    document.body.setAttribute('data-device', currentDevice);
 }
 detectDevice();
 window.addEventListener("resize", detectDevice);
