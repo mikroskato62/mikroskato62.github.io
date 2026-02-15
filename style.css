@@ -115,7 +115,7 @@ body
 /* PC button hover efect ... */
 @media (hover: hover) and (pointer: fine) 
 {    
-    .btn-icon { display: inline; }
+    .btn-icon { display: inline-block; }
     .btn-text { display: none; }
     .edge-btn:hover .btn-icon { display: none; }
     .edge-btn:hover .btn-text { display: inline; }
@@ -124,4 +124,4 @@ body
 /* Text/Symbol display settings ... */
 .left-btn .btn-icon, 
 .right-btn .btn-icon { writing-mode: horizontal-tb; }
-.left-btn .btn-icon { display: inline-block; transform: rotate(180deg); }
+.left-btn .btn-icon { transform: rotate(180deg); }
