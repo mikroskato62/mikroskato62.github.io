@@ -1,3 +1,6 @@
+/* Required for predictable element sizing ... */
+* { box-sizing: border-box; }
+
 /* Main screen ... */
 body 
 {
@@ -66,27 +69,27 @@ body
 /* Placing top button ... */
 .top-btn 
 {
-    top: 0;
-    left: 60px;
-    right: 60px;
+    top: 3;
+    left: 63px;
+    right: 63px;
     height: 60px;
 }
 
 /* Placing bottom button ... */
 .bottom-btn
 {
-    bottom: 0;
-    left: 60px;
-    right: 60px;
+    bottom: 3;
+    left: 63px;
+    right: 63px;
     height: 60px;
 }
 
 /* Placing left button ...  */
 .left-btn 
 {
-    left: 0;
-    top: 60px;
-    bottom: 60px;
+    left: 3;
+    top: 63px;
+    bottom: 63px;
     width: 60px;
     writing-mode: vertical-rl; 
     transform: rotate(180deg);
@@ -95,9 +98,9 @@ body
 /* Placing right button ... */
 .right-btn
 {
-    right: 0;
-    top: 60px;
-    bottom: 60px;
+    right: 3;
+    top: 63px;
+    bottom: 63px;
     width: 60px;
     writing-mode: vertical-rl; 
 }
