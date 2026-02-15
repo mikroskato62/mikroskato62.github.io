@@ -56,15 +56,12 @@ body
     .subtitle { font-size: 0.75rem; }
 }
 
-/* Text hover effect (only pc?) ... */
-@media (hover: hover) and (pointer: fine) 
+/* Text hover effect (Desktop) ... */
+body[data-device="Desktop"] .handle:hover 
 {
-    .handle:hover 
-    {
-        transform: scale(1.2); 
-        letter-spacing: 2px;
-        color: var(--random-color, #ffffff); 
-    }
+    transform: scale(1.2); 
+    letter-spacing: 2px;
+    color: var(--random-color, #ffffff); 
 }
 
 /* Four corner buttons ... */
@@ -138,14 +135,11 @@ body
 .btn-icon { display: none; }
 .btn-text { display: inline; }
 
-/* PC button hover efect ... */
-@media (hover: hover) and (pointer: fine) 
-{    
-    .btn-icon { display: inline-block; }
-    .btn-text { display: none; }
-    .edge-btn:hover .btn-icon { display: none; }
-    .edge-btn:hover .btn-text { display: inline; }
-}
+/* PC button hover efect (Desktop) ... */
+body[data-device="Desktop"] .btn-icon { display: inline-block; }
+body[data-device="Desktop"] .btn-text { display: none; }
+body[data-device="Desktop"] .edge-btn:hover .btn-icon { display: none; }
+body[data-device="Desktop"] .edge-btn:hover .btn-text { display: inline; }
 
 /* Text/Symbol display settings ... */
 .left-btn .btn-icon, 
