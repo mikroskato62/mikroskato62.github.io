@@ -3,27 +3,37 @@ body
 {
     margin: 0;
     padding: 0;
-    background-color: #121212;
-    font-family: 'Courier New', Courier, monospace;
+    background-color: #121212; 
+    font-family: 'Courier New', Courier, monospace;     
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    justify-content: center; 
+    align-items: center;     
+    min-height: 100dvh;       
+    overflow: hidden; 
 }
 
 /* Text ... */
 .handle 
 {
     color: #ffffff;
-    font-size: 3rem;
+    font-size: 3rem; 
     cursor: default;
     transition: all 0.3s ease-in-out; 
 }
 
-/* Hover efect ... */
-.handle:hover 
+/* Mobile settings ... */
+@media (max-width: 600px) 
 {
-    color: #00ffcc;
-    transform: scale(1.2);
-    letter-spacing: 2px;
+    .handle { font-size: 2rem; }
+}
+
+/* Hover effect ... */
+@media (hover: hover) and (pointer: fine) 
+{
+    .handle:hover 
+    {
+        color: #00ffcc; 
+        transform: scale(1.2); 
+        letter-spacing: 2px; 
+    }
 }
