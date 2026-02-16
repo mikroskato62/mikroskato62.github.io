@@ -135,7 +135,7 @@ body[data-device="Desktop"] .handle:hover
     color: #121212;
 }
 
-/* Placing top button ... */
+/* Placing middle-top button ... */
 .top-btn 
 {
     top: 3px;
@@ -145,7 +145,7 @@ body[data-device="Desktop"] .handle:hover
     clip-path: polygon(0 0, 100% 0, calc(100% - 60px) 100%, 60px 100%);
 }
 
-/* Placing bottom button ... */
+/* Placing middle-bottom button ... */
 .bottom-btn
 {
     bottom: 3px;
@@ -155,7 +155,7 @@ body[data-device="Desktop"] .handle:hover
     clip-path: polygon(60px 0, calc(100% - 60px) 0, 100% 100%, 0 100%);
 }
 
-/* Placing left button ...  */
+/* Placing middle-left button ...  */
 .left-btn 
 {
     left: 3px;
@@ -167,12 +167,55 @@ body[data-device="Desktop"] .handle:hover
     clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 calc(100% - 60px));
 }
 
-/* Placing right button ... */
+/* Placing middle-right button ... */
 .right-btn
 {
     right: 3px;
     top: 3px;
     bottom: 3px;
+    width: 60px;
+    writing-mode: vertical-rl;
+    clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 calc(100% - 60px));
+}
+
+/*  Placing top-bottom button ... */
+.return-top 
+{
+    bottom: 3px;
+    left: -60px; 
+    right: -60px; 
+    height: 60px;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 60px) 100%, 60px 100%);
+}
+
+/* Placing bottom-top button ... */
+.return-bottom 
+{
+    top: 3px;
+    left: -60px;
+    right: -60px;
+    height: 60px;
+    clip-path: polygon(60px 0, calc(100% - 60px) 0, 100% 100%, 0 100%);
+}
+
+/* Placing leftt-right button ... */
+.return-left 
+{
+    right: 3px;
+    top: -60px;
+    bottom: -60px;
+    width: 60px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 calc(100% - 60px));
+}
+
+/* Placing right-left button ... */
+.return-right 
+{
+    left: 3px;
+    top: -60px;
+    bottom: -60px;
     width: 60px;
     writing-mode: vertical-rl;
     clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 calc(100% - 60px));
@@ -196,5 +239,8 @@ body[data-device="Desktop"] .edge-btn:hover .btn-text { opacity: 1; }
 
 /* Text/Symbol display settings ... */
 .left-btn .btn-icon, 
-.right-btn .btn-icon { writing-mode: horizontal-tb; }
-.left-btn .btn-icon { transform: rotate(180deg); }
+.right-btn .btn-icon,
+.return-left .btn-icon, 
+.return-right .btn-icon { writing-mode: horizontal-tb; }
+.left-btn .btn-icon,
+.return-left .btn-icon { transform: rotate(180deg); }
