@@ -11,11 +11,15 @@
     <div id="universe">
         <section class="screen top-screen">
             <h2>[ TOP VIEW ]</h2>
-            <button class="back-btn" onclick="moveCamera('middle')">Go back to main screen</button>
+            <button class="edge-btn return-top" onclick="moveCamera('middle')">
+            <span class="btn-icon">▾</span><span class="btn-text">[ RETURN ]</span>
+        </button>
         </section>
         <section class="screen left-screen">
             <h2>[ LEFT VIEW ]</h2>
-            <button class="back-btn" onclick="moveCamera('middle')">Go back to main screen</button>
+            <button class="edge-btn return-left" onclick="moveCamera('middle')">
+            <span class="btn-icon">▸</span><span class="btn-text">[ RETURN ]</span>
+        </button>
         </section>
         <section class="screen middle-screen">
             <div class="center-content">
@@ -38,11 +42,15 @@
         </section>
         <section class="screen right-screen">
             <h2>[ RIGHT VIEW ]</h2>
-            <button class="back-btn" onclick="moveCamera('middle')">Go back to main screen</button>
+           <button class="edge-btn return-right" onclick="moveCamera('middle')">
+            <span class="btn-icon">◂</span><span class="btn-text">[ RETURN ]</span>
+        </button>
         </section>
         <section class="screen bottom-screen">
             <h2>[ BOTTOM VIEW ]</h2>
-            <button class="back-btn" onclick="moveCamera('middle')">Go back to main screen</button>
+            <button class="edge-btn return-bottom" onclick="moveCamera('middle')">
+            <span class="btn-icon">▴</span><span class="btn-text">[ RETURN ]</span>
+        </button>
         </section>
     </div>
     <script src="script.js"></script>
