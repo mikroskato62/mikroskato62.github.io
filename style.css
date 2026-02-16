@@ -41,11 +41,11 @@ html, body
 }
 
 /* Placing them on the giant grid ... */
-.middle-screen { top: 100dvh; left: 100vw; }
-.top-screen    { top: 0;      left: 100vw; }
-.bottom-screen { top: 200dvh; left: 100vw; }
-.left-screen   { top: 100dvh; left: 0;     }
-.right-screen  { top: 100dvh; left: 200vw; }
+.middle-screen { top: 100dvh; left: 100vw; } 
+.top-screen    { top: 0;      left: 100vw; padding-bottom: 63px; }
+.bottom-screen { top: 200dvh; left: 100vw; padding-top: 63px; }
+.left-screen   { top: 100dvh; left: 0;     padding-right: 63px; }
+.right-screen  { top: 100dvh; left: 200vw; padding-left: 63px; }
 
 /* Temporary back buttons ... */
 .back-btn 
