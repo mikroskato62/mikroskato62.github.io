@@ -15,6 +15,52 @@ body
     overflow: hidden; 
 }
 
+/* The universe screen ... */
+#universe 
+{
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 300vw; 
+    height: 300dvh;
+    transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1); 
+    transform: translate(-100vw, -100dvh); 
+}
+
+/* Base style for aLL 5 screens ... */
+.screen 
+{
+    position: absolute;
+    width: 100vw;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Placing them on the giant grid ... */
+.middle-screen { top: 100dvh; left: 100vw; }
+.top-screen    { top: 0;      left: 100vw; }
+.bottom-screen { top: 200dvh; left: 100vw; }
+.left-screen   { top: 100dvh; left: 0;     }
+.right-screen  { top: 100dvh; left: 200vw; }
+
+/* Temporary back buttons ... */
+.back-btn 
+{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: transparent;
+    color: #00ffcc;
+    border: 1px solid #00ffcc;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.back-btn:hover { background: #00ffcc; color: #121212; }
+
 /* All the texts ... */
 .center-content 
 {
