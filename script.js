@@ -1,6 +1,17 @@
 // The global variables ...
 let currentDevice = "Desktop"; 
 const deviceLabel = document.getElementById("device-label");
+const universe = document.getElementById('universe');
+
+// Selecting the view screen between the 5 total ...
+function moveCamera(direction) 
+{
+    if (direction === 'middle') { universe.style.transform = `translate(-100vw, -100dvh)`; } 
+    else if (direction === 'top') { universe.style.transform = `translate(-100vw, 0)`; } 
+    else if (direction === 'bottom') { universe.style.transform = `translate(-100vw, -200dvh)`; } 
+    else if (direction === 'left') { universe.style.transform = `translate(0, -100dvh)`; } 
+    else if (direction === 'right') { universe.style.transform = `translate(-200vw, -100dvh)`; }
+}
 
 // Dynamic device detection and versions label ...
 function detectDevice() 
