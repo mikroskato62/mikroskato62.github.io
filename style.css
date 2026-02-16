@@ -1,18 +1,18 @@
 /* Required for predictable element sizing ... */
 * { box-sizing: border-box; }
 
-/* Main screen ... */
-body 
+/* Main (strict) screen ... */
+html, body 
 {
     margin: 0;
     padding: 0;
+    width: 100vw;
+    height: 100dvh;
     background-color: #121212; 
     font-family: 'Courier New', Courier, monospace;     
-    display: flex;
-    justify-content: center; 
-    align-items: center;     
-    min-height: 100dvh;       
-    overflow: hidden; 
+    overflow: hidden;
+    overscroll-behavior: none;
+    touch-action: none;
 }
 
 /* The universe screen ... */
