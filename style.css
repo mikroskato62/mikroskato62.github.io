@@ -206,7 +206,6 @@ body[data-device="Desktop"] .handle:hover
     bottom: -60px;
     width: 60px;
     writing-mode: vertical-rl;
-    transform: rotate(180deg);
     clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 calc(100% - 60px));
 }
 
@@ -218,6 +217,7 @@ body[data-device="Desktop"] .handle:hover
     bottom: -60px;
     width: 60px;
     writing-mode: vertical-rl;
+    transform: rotate(180deg);
     clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 calc(100% - 60px));
 }
 
@@ -243,4 +243,4 @@ body[data-device="Desktop"] .edge-btn:hover .btn-text { opacity: 1; }
 .return-left .btn-icon, 
 .return-right .btn-icon { writing-mode: horizontal-tb; }
 .left-btn .btn-icon,
-.return-left .btn-icon { transform: rotate(180deg); }
+.return-right .btn-icon { transform: rotate(180deg); }
