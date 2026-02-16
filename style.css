@@ -206,7 +206,7 @@ body[data-device="Desktop"] .handle:hover
     bottom: -63px;
     width: 60px;
     writing-mode: vertical-rl;
-    clip-path: polygon(0 0, 100% 60px, 100% calc(100% - 60px), 0 100%);
+    clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 calc(100% - 60px));
 }
 
 /* Placing right-left button ... */
@@ -218,7 +218,7 @@ body[data-device="Desktop"] .handle:hover
     width: 60px;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    clip-path: polygon(0 0, 100% 60px, 100% calc(100% - 60px), 0 100%);
+    clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 calc(100% - 60px));
 }
 
 /* Mobile buttons settings ... */
