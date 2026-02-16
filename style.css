@@ -182,8 +182,8 @@ body[data-device="Desktop"] .handle:hover
 .return-top 
 {
     bottom: 3px;
-    left: -60px; 
-    right: -60px; 
+    left: -63px;
+    right: -63px; 
     height: 60px;
     clip-path: polygon(0 0, 100% 0, calc(100% - 60px) 100%, 60px 100%);
 }
@@ -192,8 +192,8 @@ body[data-device="Desktop"] .handle:hover
 .return-bottom 
 {
     top: 3px;
-    left: -60px;
-    right: -60px;
+    left: -63px;
+    right: -63px;
     height: 60px;
     clip-path: polygon(60px 0, calc(100% - 60px) 0, 100% 100%, 0 100%);
 }
@@ -202,23 +202,23 @@ body[data-device="Desktop"] .handle:hover
 .return-left 
 {
     right: 3px;
-    top: -60px;
-    bottom: -60px;
+    top: -63px;
+    bottom: -63px;
     width: 60px;
     writing-mode: vertical-rl;
-    clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 calc(100% - 60px));
+    clip-path: polygon(0 0, 100% 60px, 100% calc(100% - 60px), 0 100%);
 }
 
 /* Placing right-left button ... */
 .return-right 
 {
     left: 3px;
-    top: -60px;
-    bottom: -60px;
+    top: -63px;
+    bottom: -63px;
     width: 60px;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 calc(100% - 60px));
+    clip-path: polygon(0 0, 100% 60px, 100% calc(100% - 60px), 0 100%);
 }
 
 /* Mobile buttons settings ... */
