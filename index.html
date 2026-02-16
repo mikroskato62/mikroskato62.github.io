@@ -8,27 +8,43 @@
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    <div class="center-content">
-        <p class="subtitle">Computer Scientist</p>
-        <h1 class="handle">@mikroskato62</h1>
-        <p class="subtitle" id="device-label">[ Selecting Version ... ]</p>
+    <div id="universe">
+        <section class="screen top-screen">
+            <h2>[ TOP VIEW ]</h2>
+            <button class="back-btn" onclick="moveCamera('middle')">Go back to main screen</button>
+        </section>
+        <section class="screen left-screen">
+            <h2>[ LEFT VIEW ]</h2>
+            <button class="back-btn" onclick="moveCamera('middle')">Go back to main screen</button>
+        </section>
+        <section class="screen middle-screen">
+            <div class="center-content">
+                <p class="subtitle">Computer Scientist</p>
+                <h1 class="handle">@mikroskato62</h1>
+                <p class="subtitle" id="device-label">[ Detecting Device... ]</p>
+            </div>
+            <button class="edge-btn top-btn" onclick="moveCamera('top')">
+                <span class="btn-icon">▴</span><span class="btn-text">[ TOP ]</span>
+            </button>
+            <button class="edge-btn right-btn" onclick="moveCamera('right')">
+                <span class="btn-icon">▸</span><span class="btn-text">[ RIGHT ]</span>
+            </button>
+            <button class="edge-btn bottom-btn" onclick="moveCamera('bottom')">
+                <span class="btn-icon">▾</span><span class="btn-text">[ BOTTOM ]</span>
+            </button>
+            <button class="edge-btn left-btn" onclick="moveCamera('left')">
+                <span class="btn-icon">◂</span><span class="btn-text">[ LEFT ]</span>
+            </button>
+        </section>
+        <section class="screen right-screen">
+            <h2>[ RIGHT VIEW ]</h2>
+            <button class="back-btn" onclick="moveCamera('middle')">Go back to main screen</button>
+        </section>
+        <section class="screen bottom-screen">
+            <h2>[ BOTTOM VIEW ]</h2>
+            <button class="back-btn" onclick="moveCamera('middle')">Go back to main screen</button>
+        </section>
     </div>
-    <button class="edge-btn top-btn">
-        <span class="btn-icon">▴</span>
-        <span class="btn-text">[ TOP ]</span>
-    </button>
-    <button class="edge-btn right-btn">
-        <span class="btn-icon">▸</span>
-        <span class="btn-text">[ RIGHT ]</span>
-    </button>
-    <button class="edge-btn bottom-btn">
-        <span class="btn-icon">▾</span>
-        <span class="btn-text">[ BOTTOM ]</span>
-    </button>
-    <button class="edge-btn left-btn">
-        <span class="btn-icon">◂</span>
-        <span class="btn-text">[ LEFT ]</span>
-    </button>
     <script src="script.js"></script>
 </body>
-</html>
+</html> 
