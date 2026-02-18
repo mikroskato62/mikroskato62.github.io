@@ -118,8 +118,14 @@ body[data-device="Desktop"] .handle { margin-bottom: 9px; }
     display: inline-block;
 }
 
-/* The Typing Animation Cover & Cursor ... */
-.screen-title::after 
+/* * The Typing Animation Cover & Cursor ... */
+.typewriter
+{
+    position: relative;
+    display: inline-block;
+    padding-right: 4px;
+}
+.typewriter::after 
 {
     content: '';
     position: absolute;
@@ -127,13 +133,13 @@ body[data-device="Desktop"] .handle { margin-bottom: 9px; }
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: #121212;
-    border-left: 3px solid #ffffff;
+    background-color: #121212; 
+    border-left: 3px solid #ffffff; 
     animation: 
-        typing 3s steps(8) infinite alternate, 
+        typing 3s steps(6) infinite alternate, 
         blink 0.8s step-end infinite;
 }
-@keyframes typing 
+@keyframes typing
 {
     0% { left: 0; }
     100% { left: 100%; } 
