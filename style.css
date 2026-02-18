@@ -118,36 +118,30 @@ body[data-device="Desktop"] .handle { margin-bottom: 9px; }
     display: inline-block;
 }
 
-/* * The Typing Animation Cover & Cursor ... */
+/* * The Typing Animation & Cursor ... */
 .typewriter
 {
-    position: relative;
     display: inline-block;
-    padding-right: 4px;
-}
-.typewriter::after 
-{
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #121212; 
-    border-left: 3px solid #ffffff; 
-    animation: 
-        typing 3s steps(6) infinite alternate, 
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #ffffff;
+    width: 0;
+    vertical-align: bottom;
+    animation:
+        typing 6s steps(6, end) infinite,
         blink 0.8s step-end infinite;
 }
 @keyframes typing
 {
-    0% { left: 0; }
-    100% { left: 100%; } 
+    0%   { width: 0; }
+    33%  { width: 6ch; }
+    90%  { width: 6ch; }
+    100% { width: 0; }
 }
 @keyframes blink 
 {
     0%, 100% { border-color: transparent; }
-    50% { border-color: #ffffff; }
+    50%       { border-color: #ffffff; }
 }
 
 /* The Paragraph of the top-screen ... */
