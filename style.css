@@ -134,8 +134,8 @@ body[data-device="Desktop"] .handle { margin-bottom: 9px; }
 @keyframes typing
 {
     0%   { width: 0; }
-    33%  { width: 7ch; }
-    90%  { width: 7ch; }
+    33%  { width: 6.7ch; }
+    90%  { width: 6.7ch; }
     100% { width: 0; }
 }
 @keyframes blink 
