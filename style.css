@@ -111,9 +111,37 @@ body[data-device="Desktop"] .handle { margin-bottom: 9px; }
 {
     color: #ffffff;
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 13px;
     font-family: 'Courier New', Courier, monospace;
     letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+/* The Typing Animation Cover & Cursor ... */
+.screen-title::after 
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #121212;
+    border-left: 3px solid #ffffff;
+    animation: 
+        typing 3s steps(8) infinite alternate, 
+        blink 0.8s step-end infinite;
+}
+@keyframes typing 
+{
+    0% { left: 0; }
+    100% { left: 100%; } 
+}
+@keyframes blink 
+{
+    0%, 100% { border-color: transparent; }
+    50% { border-color: #ffffff; }
 }
 
 /* The Paragraph of the top-screen ... */
@@ -129,15 +157,15 @@ body[data-device="Desktop"] .handle { margin-bottom: 9px; }
 /* The Links (on the top-screen) and hover effects ... */
 .text-link
 {
-    color: #00ffcc;
+    color: #3399ff;
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: all 0.3s ease;
 }
 .text-link:hover 
 {
-    border-bottom: 1px solid #00ffcc;
-    text-shadow: 0 0 8px rgba(0, 255, 204, 0.4);
+    border-bottom: 1px solid #3399ff;
+    text-shadow: 0 0 8px rgba(51, 153, 255, 0.4);
 }
 
 /* Tablet constraint for top-screen ... */
