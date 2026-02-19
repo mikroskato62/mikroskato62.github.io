@@ -188,6 +188,61 @@ body[data-device="Desktop"] .handle { margin-bottom: 9px; }
     }
 }
 
+/* The bottom-screen links ... */
+.contact-links 
+{
+    display: flex;
+    flex-direction: column; 
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* The bottom-screen buttons ... */
+.contact-btn
+{
+    display: inline-block;
+    padding: 12px 30px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+    border: 1px solid #ffffff;
+    text-align: center;
+    letter-spacing: 2px;
+    box-shadow: inset 0 0 0 0 #ffffff;
+    transition: color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Desktop only hover effect for the bottom-screen ... */
+body[data-device="Desktop"] .contact-btn:hover 
+{
+    color: #121212;
+    box-shadow: inset 0 -60px 0 0 #ffffff;
+}
+
+/* The bottom-screen footer ... */
+.footer-info 
+{
+    position: absolute;
+    bottom: 15px;
+    color: #888888;
+    font-size: 0.75rem;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Switch to horizontal row only on Desktop ... */
+@media (min-width: 1024px) 
+{
+    .contact-links 
+    {
+        flex-direction: row; 
+        gap: 25px;
+    }
+}
+
 /* Mobile settings ... */
 @media (max-width: 600px) 
 {
