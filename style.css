@@ -225,7 +225,7 @@ body[data-device="Desktop"] .contact-btn:hover
 .footer-info 
 {
     position: absolute;
-    bottom: 3px;
+    bottom: -1px;
     color: #888888;
     font-size: 0.75rem;
     font-family: 'Courier New', Courier, monospace;
@@ -301,7 +301,7 @@ body[data-device="Desktop"] .handle:hover
     height: 60px;
     clip-path: polygon(60px 0, calc(100% - 60px) 0, 100% 100%, 0 100%);
 }
-.bottom-screen .content-container { transform: translateY(-1px); }
+.bottom-screen .content-container { transform: translateY(-3px); }
 
 /* Placing middle-left button ...  */
 .left-btn 
