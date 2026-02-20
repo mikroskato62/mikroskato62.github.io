@@ -252,11 +252,11 @@ body[data-device="Desktop"] .contact-btn:hover
 .spin-icon 
 {
     display: inline-block; 
-    color: #00ffcc; 
-    font-size: 1.2em; 
+    color: #bf710b; 
+    font-size: 1.1em; 
     vertical-align: middle; 
     position: relative;
-    top: -3px;
+    top: -1px;
     animation: spin-infinite 3s linear infinite; 
 }
 @keyframes spin-infinite
