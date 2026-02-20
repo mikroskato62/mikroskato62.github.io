@@ -241,6 +241,11 @@ body[data-device="Desktop"] .contact-btn:hover
         flex-direction: row; 
         gap: 26px;
     }
+    .footer-info 
+    {
+        font-size: 0.85rem;
+        bottom: -5px;
+    }
 }
 
 /* Mobile settings ... */
