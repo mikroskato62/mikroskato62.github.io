@@ -248,6 +248,19 @@ body[data-device="Desktop"] .contact-btn:hover
     }
 }
 
+/* Animation for the title of the bottom screen ... */
+.spin-icon 
+{
+    display: inline-block;
+    color: #05781c;
+    animation: spin-infinite 3s linear infinite;
+}
+@keyframes spin-infinite
+{
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 /* Mobile settings ... */
 @media (max-width: 600px) 
 {
