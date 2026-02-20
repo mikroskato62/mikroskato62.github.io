@@ -256,7 +256,7 @@ body[data-device="Desktop"] .contact-btn:hover
     font-size: 1.1em; 
     vertical-align: middle; 
     position: relative;
-    top: -1px;
+    top: -2px;
     animation: spin-infinite 3s linear infinite; 
 }
 @keyframes spin-infinite
