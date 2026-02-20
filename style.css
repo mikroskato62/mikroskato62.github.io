@@ -251,11 +251,13 @@ body[data-device="Desktop"] .contact-btn:hover
 /* Animation for the title of the bottom screen ... */
 .spin-icon 
 {
-    display: inline-block;
-    color: #05781c;
-    font-size: 1.2em;
-    vertical-align: middle;
-    animation: spin-infinite 3s linear infinite;
+    display: inline-block; 
+    color: #00ffcc; 
+    font-size: 1.2em; 
+    vertical-align: middle; 
+    position: relative;
+    top: -3px;
+    animation: spin-infinite 3s linear infinite; 
 }
 @keyframes spin-infinite
 {
