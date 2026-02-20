@@ -243,8 +243,8 @@ body[data-device="Desktop"] .contact-btn:hover
     }
     .footer-info 
     {
-        font-size: 0.85rem;
-        bottom: -5px;
+        font-size: 0.99rem;
+        bottom: -3px;
     }
 }
 
