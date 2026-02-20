@@ -253,6 +253,8 @@ body[data-device="Desktop"] .contact-btn:hover
 {
     display: inline-block;
     color: #05781c;
+    font-size: 1.2em;
+    vertical-align: middle;
     animation: spin-infinite 3s linear infinite;
 }
 @keyframes spin-infinite
