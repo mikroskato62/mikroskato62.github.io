@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>@mikroskato62</title>
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="universe">
@@ -21,16 +21,16 @@
             </button>
         </section>
         <section class="screen left-screen">
-            <h2>[ LEFT VIEW ]</h2>
+            <div class="mind-container" id="mindContainer"></div>
             <button class="edge-btn return-left" onclick="moveCamera('middle')">
-            <span class="btn-icon">▸</span><span class="btn-text">[ RETURN ]</span>
-        </button>
+                <span class="btn-icon">▸</span><span class="btn-text">[ RETURN ]</span>
+            </button>
         </section>
         <section class="screen middle-screen">
             <div class="center-content">
                 <p class="subtitle">Computer Scientist</p>
                 <h1 class="handle">@mikroskato62</h1>
-                <p class="subtitle" id="device-label">[ Detecting Device... ]</p>
+                <p class="subtitle" id="device-label">[ Detecting Device ... ]</p>
             </div>
             <button class="edge-btn top-btn" onclick="moveCamera('top')">
                 <span class="btn-icon">▴</span><span class="btn-text">[ TOP ]</span>
@@ -72,4 +72,4 @@
     </div>
     <script src="script.js"></script>
 </body>
-</html> 
+</html>

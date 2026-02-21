@@ -277,7 +277,7 @@ body[data-device="Desktop"] .handle:hover
 {
     transform: scale(1.2); 
     letter-spacing: 2px;
-    color: var(--random-color, #ffffff); 
+    /* noinspection CssUnresolvedCustomProperty */ color: var(--random-color, #ffffff);
 }
 
 /* Four corner buttons ... */
@@ -407,10 +407,90 @@ body[data-device="Desktop"] .btn-text { opacity: 0; }
 body[data-device="Desktop"] .edge-btn:hover .btn-icon { opacity: 0; }
 body[data-device="Desktop"] .edge-btn:hover .btn-text { opacity: 1; }
 
-/* Text/Symbol display settings ... */
+/* Text-Symbol display settings ... */
 .left-btn .btn-icon, 
 .right-btn .btn-icon,
 .return-left .btn-icon, 
 .return-right .btn-icon { writing-mode: horizontal-tb; }
 .left-btn .btn-icon,
 .return-right .btn-icon { transform: rotate(180deg); }
+
+/* The left screen (*) ... */
+.mind-container
+{
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+.mind-fill
+{
+    fill: white;
+    stroke: transparent;
+    stroke-width: 1;
+    transition: fill 0.2s ease, stroke 0.2s ease;
+}
+.mind-arr
+{
+    stroke: white;
+    stroke-width: 0.8;
+    fill: none;
+}
+.mind-text
+{
+    font-family: 'Courier New', Courier, monospace;
+    text-anchor: middle;
+    dominant-baseline: central;
+    fill: #121212;
+    pointer-events: none;
+    transition: fill 0.2s ease;
+}
+.mind-svg
+{
+    display: block;
+    pointer-events: none;
+}
+.mind-person
+{
+    fill: white;
+    transition: fill 0.3s ease;
+}
+.marr-fill
+{
+    fill: white;
+}
+
+/* Left screen (hover) effects (desktop) ... */
+body[data-device="Desktop"] .mind-person,
+body[data-device="Desktop"] .thought
+{
+    pointer-events: all;
+    cursor: pointer;
+}
+body[data-device="Desktop"] .mind-text
+{
+    opacity: 0;
+}
+body[data-device="Desktop"] .mind-svg:has(.mind-person:hover) .mind-fill
+{
+    fill: #121212;
+    stroke: white;
+}
+body[data-device="Desktop"] .mind-svg:has(.mind-person:hover) .mind-text
+{
+    opacity: 1;
+    fill: white;
+}
+body[data-device="Desktop"] .mind-svg:has(.mind-person:hover) .mind-person
+{
+    fill: #3399ff;
+}
+body[data-device="Desktop"] .thought:hover .mind-fill
+{
+    fill: #121212;
+    stroke: white;
+}
+body[data-device="Desktop"] .thought:hover .mind-text
+{
+    opacity: 1;
+    fill: white;
+}
