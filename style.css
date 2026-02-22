@@ -560,7 +560,7 @@ body[data-device="Desktop"] .thought:hover .mind-text
     {
         grid-area: auto;
         width: 67vw;
-        height: 38dvh;
+        height: 35dvh;
     }
     .fc-prev, .fc-next
     {
