@@ -523,7 +523,7 @@ body[data-device="Desktop"] .thought:hover .mind-text
     grid-template-areas:
         "left-arrow right-arrow"
         "main-box main-box";
-    row-gap: 18px;
+    row-gap: 12px;
     column-gap: 40px;
     justify-content: center;
     align-items: center;
@@ -534,7 +534,7 @@ body[data-device="Desktop"] .thought:hover .mind-text
     grid-area: main-box;
     position: relative;
     overflow: hidden;
-    width: min(82vw, 420px);
+    width: 67vw;
     height: 55dvh;
 }
 @media (min-width: 768px)
@@ -542,7 +542,7 @@ body[data-device="Desktop"] .thought:hover .mind-text
     .projects-title { font-size: 1.6rem; }
     .flashcard-viewport
     {
-        width: min(60vw, 560px);
+        width: 67vw;
         height: 50dvh;
     }
 }
@@ -559,7 +559,7 @@ body[data-device="Desktop"] .thought:hover .mind-text
     .flashcard-viewport
     {
         grid-area: auto;
-        width: min(52vw, 640px);
+        width: 67vw;
         height: 38dvh;
     }
     .fc-prev, .fc-next
@@ -675,20 +675,20 @@ body[data-device="Desktop"] .thought:hover .mind-text
     transition: transform 0.25s ease, color 0.25s ease;
     line-height: 1;
 }
-.fc-arrow:hover { color: #cccccc; }
 .fc-prev
 {
     grid-area: left-arrow;
     justify-self: end;
     transform: rotate(180deg);
 }
-.fc-prev:hover { transform: rotate(180deg) translateX(5px); }
 .fc-next
 {
     grid-area: right-arrow;
     justify-self: start;
 }
-.fc-next:hover { transform: translateX(5px); }
+body[data-device="Desktop"] .fc-arrow:hover { color: #cccccc; }
+body[data-device="Desktop"] .fc-prev:hover { transform: rotate(180deg) translateX(17px); }
+body[data-device="Desktop"] .fc-next:hover { transform: translateX(17px); }
 
 /* The counter dots (no effect yet - right screen) ... */
 .fc-counter
