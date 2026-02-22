@@ -1,3 +1,5 @@
+// [ @mikroskato62 ] //
+
 // The global variables ...
 let currentDevice = "Desktop"; 
 const deviceLabel = document.getElementById("device-label");
@@ -159,3 +161,129 @@ handleText.addEventListener('mouseleave', () =>
     });
 
 })();
+
+// The right screen ...
+(function ()
+{
+    const PROJECTS =
+    [
+            {
+                name: '♡ Personal Website',
+                description: 'Designed and developed a responsive personal portfolio featuring a dynamic, multi-panel camera navigation system. Engineered entirely from scratch using vanilla web technologies without external frameworks. Hosted on GitHub Pages ...',
+                tools: ['HTML', 'CSS', 'JavaScript'],
+                link: 'https://github.com/mikroskato62?tab=repositories'
+            },
+            {
+                name: '♔ Rafish!',
+                description: 'An educational chess assistant designed for the Chess.com platform on Google Chrome. It helps players analyze positions, understand optimal moves, and improve their overall gameplay. Visit the linked repository for more information ...',
+                tools: ['Python', '+++'],
+                link: 'https://github.com/mikroskato62?tab=repositories'
+            },
+            {
+                name: '✎ Android App (CTDLW)',
+                description: 'A comprehensive task management utility developed for the Android ecosystem. It facilitates efficient daily planning through dynamic to-do lists and includes a widget for enhanced user accessibility. See the linked repository for more details ...',
+                tools: ['Java', 'Android SDK', 'SQL'],
+                link: 'https://github.com/mikroskato62?tab=repositories'
+            },
+            {
+                name: '« Amphipolis »',
+                description: 'An academic group project that digitally recreates the Greek board game. Co-developed utilizing strict MVC architecture to ensure a clean separation of game logic and the user interface. Explore the source code through the link ...',
+                tools: ['Java', '...'],
+                link: 'https://github.com/mikroskato62?tab=repositories'
+            },
+            {
+                name: '▪ Custom ReadMe.md',
+                description: 'An automated, dynamic file designed for my GitHub profile page. It utilizes serverless hosting to continuously fetch, update and display portfolio highlights. Follow the link to view it yourself ...',
+                tools: ['Markdown', 'HTML', 'Vercel', 'APIs'],
+                link: 'https://github.com/mikroskato62?tab=repositories'
+            },
+            {
+                name: '⍟ View all projects:',
+                description: 'This portfolio highlights a curated selection of my work; only the best ones. To check the open-source code, explore the rest projects, and discover my newest software developments, please visit my GitHub profile :)',
+                tools: ['???', '!!!', "..."],
+                link: 'https://github.com/mikroskato62?tab=repositories'
+            }
+    ];
+
+    let currentProject = 0;
+    let isAnimating = false;
+
+    function renderCard()
+    {
+        const project = PROJECTS[currentProject];
+        document.getElementById('fc-name').textContent = project.name;
+        document.getElementById('fc-desc').textContent = project.description;
+        document.getElementById('fc-star').href = project.link;
+
+        const tools = document.getElementById('fc-tools');
+        tools.innerHTML = '';
+        project.tools.forEach(tool =>
+        {
+            const span = document.createElement('span');
+            span.className = 'fc-tag';
+            span.textContent = tool;
+            tools.appendChild(span);
+        });
+
+        document.querySelectorAll('.fc-dot').forEach((dot, i) => { dot.classList.toggle('active', i === currentProject); });
+    }
+
+    window.changeCard = function(direction)
+    {
+        if (isAnimating) return;
+        isAnimating = true;
+        resetTimer();
+
+        const card = document.getElementById('flashcard');
+        const outClass   = direction > 0 ? 'anim-out-left' : 'anim-out-right';
+        const inClass    = direction > 0 ? 'anim-in-right' : 'anim-in-left';
+
+        card.classList.add(outClass);
+
+        setTimeout(() =>
+        {
+            currentProject = (currentProject + direction + PROJECTS.length) % PROJECTS.length;
+            renderCard();
+            card.classList.remove(outClass);
+            card.classList.add(inClass);
+
+            setTimeout(() =>
+            {
+                card.classList.remove(inClass);
+                isAnimating = false;
+            }, 375);
+        }, 325);
+    };
+
+    document.addEventListener('keydown', (e) =>
+    {
+        const transform = universe.style.transform;
+        const onRightScreen = transform === 'translate(-200vw, -100dvh)';
+        if (!onRightScreen) return;
+        if (e.key === 'ArrowLeft') changeCard(-1);
+        if (e.key === 'ArrowRight') changeCard(1);
+    });
+
+    const counter = document.getElementById('fc-counter');
+    counter.innerHTML = '';
+    PROJECTS.forEach((_, i) =>
+    {
+        const dot = document.createElement('span');
+        dot.className = 'fc-dot' + (i === 0 ? ' active' : '');
+        counter.appendChild(dot);
+    });
+
+    let autoTimer = setInterval(() => changeCard(1), 7575);
+    function resetTimer()
+    {
+        clearInterval(autoTimer);
+        autoTimer = setInterval(() => changeCard(1), 7575);
+    }
+    document.querySelector('.fc-prev').addEventListener('click', resetTimer);
+    document.querySelector('.fc-next').addEventListener('click', resetTimer);
+
+    renderCard();
+
+})();
+
+// [ @mikroskato62 ] //

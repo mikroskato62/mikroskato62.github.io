@@ -1,3 +1,5 @@
+<!--- [ @mikroskato62 ] --->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,10 +48,29 @@
             </button>
         </section>
         <section class="screen right-screen">
-            <h2>[ RIGHT VIEW ]</h2>
-           <button class="edge-btn return-right" onclick="moveCamera('middle')">
-            <span class="btn-icon">◂</span><span class="btn-text">[ RETURN ]</span>
-        </button>
+            <div class="projects-container">
+                <h2 class="projects-title">/* My Projects */</h2>
+                <div class="flashcard-wrapper">
+                    <button class="fc-arrow fc-prev" onclick="changeCard(-1)" aria-label="Previous project">➜</button>
+                    <div class="flashcard-viewport">
+                        <div class="flashcard" id="flashcard">
+                            <div class="fc-header">
+                                <span class="fc-name" id="fc-name"></span>
+                                <a class="fc-star" id="fc-star" href="#" target="_blank" title="[ View on GitHub ]">🔗</a>
+                            </div>
+                            <p class="fc-desc" id="fc-desc"></p>
+                            <div class="fc-footer">
+                                <div class="fc-tools" id="fc-tools"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="fc-arrow fc-next" onclick="changeCard(1)" aria-label="Next project">➜</button>
+                </div>
+                <div class="fc-counter" id="fc-counter">[ 01 / 01 ]</div>
+            </div>
+            <button class="edge-btn return-right" onclick="moveCamera('middle')">
+                <span class="btn-icon">◂</span><span class="btn-text">[ RETURN ]</span>
+            </button>
         </section>
         <section class="screen bottom-screen">
             <div class="content-container">
@@ -73,3 +94,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+<!--- [ @mikroskato62 ] --->
