@@ -512,33 +512,36 @@ body[data-device="Desktop"] .thought:hover .mind-text
     margin: 0;
     color: #ffffff;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     letter-spacing: 2px;
     font-weight: bold;
     text-align: center;
 }
 .flashcard-wrapper
 {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 18px;
+    column-gap: 40px;
     align-items: center;
-    justify-content: center;
-    gap: 23px;
+    justify-items: center;
     width: 100%;
 }
 .flashcard-viewport
 {
     position: relative;
     overflow: hidden;
-    /* Mobile default */
+    grid-column: 1 / 3;
     width: min(82vw, 420px);
-    height: 42dvh;
+    height: 55dvh;
 }
 @media (min-width: 768px)
 {
+    .projects-title { font-size: 1.6rem; }
     .flashcard-viewport
     {
         width: min(60vw, 560px);
-        height: 40dvh;
+        height: 50dvh;
     }
 }
 @media (min-width: 1024px)
@@ -549,6 +552,13 @@ body[data-device="Desktop"] .thought:hover .mind-text
         height: 38dvh;
     }
     .projects-title { font-size: 2rem; }
+    .flashcard-wrapper
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 23px;
+    }
 }
 
 /* The (complete) flashcards (right screen) ... */
@@ -658,8 +668,13 @@ body[data-device="Desktop"] .thought:hover .mind-text
     line-height: 1;
 }
 .fc-arrow:hover { color: #cccccc; }
-.fc-prev { transform: rotate(180deg); }
+.fc-prev
+{
+    transform: rotate(180deg);
+    justify-self: end;
+}
 .fc-prev:hover { transform: rotate(180deg) translateX(5px); }
+.fc-next { justify-self: start; }
 .fc-next:hover { transform: translateX(5px); }
 
 /* The counter dots (no effect yet - right screen) ... */
