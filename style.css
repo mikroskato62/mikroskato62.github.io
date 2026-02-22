@@ -503,7 +503,7 @@ body[data-device="Desktop"] .thought:hover .mind-text
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 18px;
+    gap: 8px;
     width: 100%;
     padding: 0 16px;
 }
@@ -523,7 +523,7 @@ body[data-device="Desktop"] .thought:hover .mind-text
     grid-template-areas:
         "left-arrow right-arrow"
         "main-box main-box";
-    row-gap: 12px;
+    row-gap: 8px;
     column-gap: 40px;
     justify-content: center;
     align-items: center;
@@ -548,6 +548,7 @@ body[data-device="Desktop"] .thought:hover .mind-text
 }
 @media (min-width: 1024px)
 {
+    .projects-container { gap: 17px; }
     .projects-title { font-size: 2rem; }
     .flashcard-wrapper
     {
@@ -559,7 +560,7 @@ body[data-device="Desktop"] .thought:hover .mind-text
     .flashcard-viewport
     {
         grid-area: auto;
-        width: 67vw;
+        width: min(52vw, 640px);
         height: 35dvh;
     }
     .fc-prev, .fc-next
