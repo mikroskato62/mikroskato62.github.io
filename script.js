@@ -5,15 +5,30 @@ let currentDevice = "Desktop";
 const deviceLabel = document.getElementById("device-label");
 const universe = document.getElementById('universe');
 
-// Selecting the view screen between the 5 total ...
-function moveCamera(direction) 
+// Selecting the view screen between the 5 total and updating the URL ...
+function moveCamera(direction)
 {
-    if (direction === 'middle') { universe.style.transform = `translate(-100vw, -100dvh)`; } 
-    else if (direction === 'top') { universe.style.transform = `translate(-100vw, 0)`; } 
-    else if (direction === 'bottom') { universe.style.transform = `translate(-100vw, -200dvh)`; } 
-    else if (direction === 'left') { universe.style.transform = `translate(0, -100dvh)`; } 
-    else if (direction === 'right') { universe.style.transform = `translate(-200vw, -100dvh)`; }
+    if (direction === 'middle')
+    {
+        window.history.pushState(null, null, window.location.pathname);
+        handleHashChange();
+    }
+    else if (direction === 'top') { window.location.hash = 'about'; }
+    else if (direction === 'bottom') { window.location.hash = 'contact'; }
+    else if (direction === 'left') { window.location.hash = 'techstack'; }
+    else if (direction === 'right') { window.location.hash = 'projects'; }
 }
+function handleHashChange()
+{
+    const hash = window.location.hash;
+    if (hash === '#about') { universe.style.transform = `translate(-100vw, 0)`; }
+    else if (hash === '#contact') { universe.style.transform = `translate(-100vw, -200dvh)`; }
+    else if (hash === '#techstack') { universe.style.transform = `translate(0, -100dvh)`; }
+    else if (hash === '#projects') { universe.style.transform = `translate(-200vw, -100dvh)`; }
+    else { universe.style.transform = `translate(-100vw, -100dvh)`; } // Default to middle
+}
+window.addEventListener('hashchange', handleHashChange);
+handleHashChange();
 
 // Dynamic device detection and versions label ...
 function detectDevice() 
@@ -56,15 +71,15 @@ handleText.addEventListener('mouseleave', () =>
     [
         { name: 'Python*',       fractionX: 0.175, fractionY: 0.099 },
         { name: 'C, C++',        fractionX: 0.488, fractionY: 0.050 },
-        { name: 'Java*',         fractionX: 0.777, fractionY: 0.087 },
-        { name: 'HTML/CSS/JS',   fractionX: 0.158, fractionY: 0.278 },
-        { name: 'Assembly',      fractionX: 0.755, fractionY: 0.269 },
+        { name: 'Java*',         fractionX: 0.762, fractionY: 0.087 },
+        { name: 'HTML/CSS/JS',   fractionX: 0.163, fractionY: 0.278 },
+        { name: 'Assembly',      fractionX: 0.729, fractionY: 0.269 },
         { name: 'Windows',       fractionX: 0.420, fractionY: 0.251 },
         { name: 'Git & GitHub',  fractionX: 0.195, fractionY: 0.463 },
-        { name: 'LaTeX',         fractionX: 0.770, fractionY: 0.419 },
+        { name: 'LaTeX',         fractionX: 0.759, fractionY: 0.419 },
         { name: 'SQL',           fractionX: 0.519, fractionY: 0.444 },
         { name: 'Markdown',      fractionX: 0.163, fractionY: 0.591 },
-        { name: 'Linux',         fractionX: 0.780, fractionY: 0.575 },
+        { name: 'Linux',         fractionX: 0.737, fractionY: 0.575 },
         { name: 'Android',       fractionX: 0.194, fractionY: 0.728 },
         { name: 'Bash',          fractionX: 0.760, fractionY: 0.702 },
         { name: 'JetBrains',     fractionX: 0.635, fractionY: 0.637 },
@@ -73,9 +88,9 @@ handleText.addEventListener('mouseleave', () =>
         { name: 'AIs',           fractionX: 0.325, fractionY: 0.159 },
         { name: 'Chrome*',       fractionX: 0.420, fractionY: 0.525 },
         { name: 'Docker - Inno', fractionX: 0.333, fractionY: 0.381 },
-        { name: '...',           fractionX: 0.685, fractionY: 0.124 },
-        { name: ':)',            fractionX: 0.602, fractionY: 0.538 },
-        { name: '!',             fractionX: 0.374, fractionY: 0.687 },
+        { name: '...',           fractionX: 0.678, fractionY: 0.126 },
+        { name: ':)',            fractionX: 0.598, fractionY: 0.538 },
+        { name: '!',             fractionX: 0.373, fractionY: 0.687 },
         { name: '?',             fractionX: 0.542, fractionY: 0.755 },
     ];
 
@@ -168,8 +183,8 @@ handleText.addEventListener('mouseleave', () =>
     const PROJECTS =
     [
             {
-                name: '♡ Personal Website',
-                description: 'Designed and developed a responsive personal portfolio featuring a dynamic, multi-panel camera navigation system. Engineered entirely from scratch using vanilla web technologies without external frameworks. Hosted on GitHub Pages ...',
+                name: '♡ Portfolio Web App',
+                description: 'Designed and developed a unique and responsive personal website featuring a dynamic, multi-panel camera navigation system. Engineered entirely from scratch using vanilla web technologies without external frameworks. Hosted on GitHub Pages ...',
                 tools: ['HTML', 'CSS', 'JavaScript'],
                 link: 'https://github.com/mikroskato62?tab=repositories'
             },
@@ -199,7 +214,7 @@ handleText.addEventListener('mouseleave', () =>
             },
             {
                 name: '⍟ View all projects:',
-                description: 'This portfolio highlights a curated selection of my work; only the best ones. To check the open-source code, explore the rest projects, and discover my newest software developments, please visit my GitHub profile :)',
+                description: 'This webpage highlights a curated selection of my work; only the best ones. To check the open-source code, explore the rest projects, and discover my newest software developments, please visit my GitHub profile :D',
                 tools: ['???', '!!!', "..."],
                 link: 'https://github.com/mikroskato62?tab=repositories'
             }
@@ -273,11 +288,11 @@ handleText.addEventListener('mouseleave', () =>
         counter.appendChild(dot);
     });
 
-    let autoTimer = setInterval(() => changeCard(1), 7575);
+    let autoTimer = setInterval(() => changeCard(1), 5000);
     function resetTimer()
     {
         clearInterval(autoTimer);
-        autoTimer = setInterval(() => changeCard(1), 7575);
+        autoTimer = setInterval(() => changeCard(1), 5000);
     }
     document.querySelector('.fc-prev').addEventListener('click', resetTimer);
     document.querySelector('.fc-next').addEventListener('click', resetTimer);
