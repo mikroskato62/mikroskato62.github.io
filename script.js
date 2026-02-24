@@ -37,7 +37,7 @@ function detectDevice()
     if (width < 768) { currentDevice = "Mobile"; }
     else if (width >= 768 && width <= 1024) { currentDevice = "Tablet"; }
     else { currentDevice = "Desktop"; }
-    deviceLabel.textContent = `[ ${currentDevice} Version ]`;
+    deviceLabel.textContent = `[ EN ${currentDevice} Version ]`;
     document.body.setAttribute('data-device', currentDevice);
 }
 detectDevice();

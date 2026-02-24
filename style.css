@@ -88,7 +88,7 @@ html, body
 .handle
 {
     color: #ffffff;
-    font-size: 3rem;
+    font-size: 3.2rem;
     line-height: 1;
     margin-top: 3px;
     margin-bottom: 4px;
@@ -223,14 +223,33 @@ body[data-device="Desktop"] .handle { margin-bottom: 9px; }
     text-align: center;
     letter-spacing: 2px;
     box-shadow: inset 0 0 0 0 #ffffff;
-    transition: color 0.4s ease, box-shadow 0.4s ease;
+    transition: color 0.7s ease, box-shadow 0.7s ease;
 }
 
 /* Desktop only hover effect for the bottom-screen ... */
 body[data-device="Desktop"] .contact-btn:hover
 {
     color: #121212;
-    box-shadow: inset 0 -60px 0 0 #ffffff;
+}
+body[data-device="Desktop"] .contact-links .contact-btn:nth-child(1):hover
+{
+    box-shadow: inset 400px 0 0 0 #ffffff;
+}
+body[data-device="Desktop"] .contact-links .contact-btn:nth-child(2):hover
+{
+    box-shadow: inset 0 100px 0 0 #ffffff;
+}
+body[data-device="Desktop"] .contact-links .contact-btn:nth-child(3):hover
+{
+    box-shadow: inset 0 -100px 0 0 #ffffff;
+}
+body[data-device="Desktop"] .contact-links .contact-btn:nth-child(4):hover
+{
+    box-shadow: inset 0 100px 0 0 #ffffff;
+}
+body[data-device="Desktop"] .contact-links .contact-btn:nth-child(5):hover
+{
+    box-shadow: inset -400px 0 0 0 #ffffff;
 }
 
 /* The bottom-screen footer ... */
@@ -282,7 +301,7 @@ body[data-device="Desktop"] .contact-btn:hover
 @media (max-width: 600px)
 {
     .handle { font-size: 1.8rem; }
-    .subtitle { font-size: 0.75rem; }
+    .subtitle { font-size: 0.72rem; }
 }
 
 /* Text hover effect (Desktop) ... */
@@ -441,7 +460,7 @@ body[data-device="Desktop"] .edge-btn:hover .btn-text { opacity: 1; }
     white-space: nowrap;
     writing-mode: vertical-rl;
     text-orientation: upright;
-    letter-spacing: -0.410em;
+    letter-spacing: -0.453em;
 }
 .v-brace
 {
@@ -450,7 +469,7 @@ body[data-device="Desktop"] .edge-btn:hover .btn-text { opacity: 1; }
     transform: rotate(90deg);
 }
 .v-brace:first-child { margin-bottom: -0.65em; }
-.v-brace:last-child  { margin-top:    -0.38em; }
+.v-brace:last-child  { margin-top:    -0.32em; }
 .left-btn .btn-text,
 .return-right .btn-text { transform: rotate(180deg); }
 
@@ -523,7 +542,7 @@ body[data-device="Desktop"] .mind-svg:has(.mind-person:hover) .mind-text
 }
 body[data-device="Desktop"] .mind-svg:has(.mind-person:hover) .mind-person
 {
-    fill: #3399ff;
+    fill: #d98297;
 }
 body[data-device="Desktop"] .thought:hover .mind-fill
 {
@@ -703,7 +722,7 @@ body[data-device="Desktop"] .thought:hover .mind-text
 {
     background: transparent;
     border: none;
-    color: #ffffff;
+    color: #2d9c2f;
     font-size: 1.5rem;
     cursor: pointer;
     width: 32px;
@@ -727,13 +746,15 @@ body[data-device="Desktop"] .thought:hover .mind-text
     grid-area: right-arrow;
     justify-self: start;
 }
-body[data-device="Desktop"] .fc-arrow:hover { color: #cccccc; }
+body[data-device="Desktop"] .fc-arrow:hover { color: #2d9c2f; }
+body[data-device="Desktop"] .fc-arrow { color: #ffffff; }
 body[data-device="Desktop"] .fc-prev:hover { transform: rotate(180deg) translateX(15px); }
 body[data-device="Desktop"] .fc-next:hover { transform: translateX(15px); }
 
 /* The counter dots (no effect yet - right screen) ... */
 .fc-counter
 {
+    padding-top: 4px;
     display: flex;
     gap: 10px;
     align-items: center;
@@ -742,16 +763,17 @@ body[data-device="Desktop"] .fc-next:hover { transform: translateX(15px); }
 {
     width: 8px;
     height: 8px;
-    border: 1px solid #ffffff;
+    border: 0.001cm solid #ffffff;
     border-radius: 50%;
     background: transparent;
     transition: background 0.35s ease, transform 0.35s ease;
 }
 .fc-dot.active
 {
-    background: #ffffff;
+    background: #2d9c2f;
     transform: scale(1.25);
 }
+body[data-device="Desktop"] .fc-dot.active { background: #ffffff; }
 
 /* The flashcard's animation on right screen ... */
 @keyframes fc-fade-out
