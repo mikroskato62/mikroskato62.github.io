@@ -1,7 +1,7 @@
 // [ @mikroskato62 ] //
 
 // The global variables ...
-let currentDevice = "Desktop"; 
+let currentDevice = "Desktop";
 const deviceLabel = document.getElementById("device-label");
 const universe = document.getElementById('universe');
 
@@ -15,7 +15,7 @@ function moveCamera(direction)
     }
     else if (direction === 'top') { window.location.hash = 'about'; }
     else if (direction === 'bottom') { window.location.hash = 'contact'; }
-    else if (direction === 'left') { window.location.hash = 'techstack'; }
+    else if (direction === 'left') { window.location.hash = 'tech-stack'; }
     else if (direction === 'right') { window.location.hash = 'projects'; }
 }
 function handleHashChange()
@@ -23,15 +23,15 @@ function handleHashChange()
     const hash = window.location.hash;
     if (hash === '#about') { universe.style.transform = `translate(-100vw, 0)`; }
     else if (hash === '#contact') { universe.style.transform = `translate(-100vw, -200dvh)`; }
-    else if (hash === '#techstack') { universe.style.transform = `translate(0, -100dvh)`; }
+    else if (hash === '#tech-stack') { universe.style.transform = `translate(0, -100dvh)`; }
     else if (hash === '#projects') { universe.style.transform = `translate(-200vw, -100dvh)`; }
-    else { universe.style.transform = `translate(-100vw, -100dvh)`; } // Default to middle
+    else { universe.style.transform = `translate(-100vw, -100dvh)`; }
 }
 window.addEventListener('hashchange', handleHashChange);
 handleHashChange();
 
 // Dynamic device detection and versions label ...
-function detectDevice() 
+function detectDevice()
 {
     const width = window.innerWidth;
     if (width < 768) { currentDevice = "Mobile"; }
@@ -51,15 +51,40 @@ window.addEventListener("focus", () => { document.title = originalTitle; });
 // Random color generator for text hover effect ...
 const handleText = document.querySelector('.handle');
 let colorInterval;
-function setRandomColor() 
+function setRandomColor()
 {
     const r = Math.floor(Math.random() * 256); const g = Math.floor(Math.random() * 256); const b = Math.floor(Math.random() * 256);
     document.documentElement.style.setProperty('--random-color', `rgb(${r}, ${g}, ${b})`);
 }
-handleText.addEventListener('mouseenter', () => 
+handleText.addEventListener('mouseenter', () =>
 { if (currentDevice === "Desktop") { setRandomColor(); colorInterval = setInterval(setRandomColor, 500); } });
-handleText.addEventListener('mouseleave', () => 
+handleText.addEventListener('mouseleave', () =>
 { clearInterval(colorInterval);  document.documentElement.style.setProperty('--random-color', '#ffffff'); });
+
+// Random color mode for corner buttons (desktop only) ...
+document.querySelectorAll('.corner-btn').forEach(btn =>
+{
+    let cornerInterval;
+    const sym = btn.querySelector('.c-default');
+    btn.addEventListener('mouseenter', () =>
+    {
+        if (currentDevice !== "Desktop") return;
+        function applyColor()
+        {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            sym.style.color = `rgb(${r}, ${g}, ${b})`;
+        }
+        applyColor();
+        cornerInterval = setInterval(applyColor, 250);
+    });
+    btn.addEventListener('mouseleave', () =>
+    {
+        clearInterval(cornerInterval);
+        sym.style.color = '';
+    });
+});
 
 // The left screen ...
 (function ()

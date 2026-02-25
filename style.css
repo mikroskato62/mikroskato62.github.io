@@ -433,11 +433,27 @@ body[data-device="Desktop"] .handle:hover
 .btn-icon { opacity: 0; }
 .btn-text { opacity: 1; }
 
-/* Desktop buttons hover efect ... */
+/* Desktop buttons hover effect ... */
 body[data-device="Desktop"] .btn-icon { opacity: 1; }
 body[data-device="Desktop"] .btn-text { opacity: 0; }
 body[data-device="Desktop"] .edge-btn:hover .btn-icon { opacity: 0; }
 body[data-device="Desktop"] .edge-btn:hover .btn-text { opacity: 1; }
+body[data-device="Desktop"] .top-btn .btn-icon,
+body[data-device="Desktop"] .bottom-btn .btn-icon,
+body[data-device="Desktop"] .left-btn .btn-icon,
+body[data-device="Desktop"] .right-btn .btn-icon { opacity: 0; }
+body[data-device="Desktop"] .top-btn .btn-text,
+body[data-device="Desktop"] .bottom-btn .btn-text,
+body[data-device="Desktop"] .left-btn .btn-text,
+body[data-device="Desktop"] .right-btn .btn-text { opacity: 1; }
+body[data-device="Desktop"] .top-btn:hover .btn-icon,
+body[data-device="Desktop"] .bottom-btn:hover .btn-icon,
+body[data-device="Desktop"] .left-btn:hover .btn-icon,
+body[data-device="Desktop"] .right-btn:hover .btn-icon { opacity: 1; }
+body[data-device="Desktop"] .top-btn:hover .btn-text,
+body[data-device="Desktop"] .bottom-btn:hover .btn-text,
+body[data-device="Desktop"] .left-btn:hover .btn-text,
+body[data-device="Desktop"] .right-btn:hover .btn-text { opacity: 0; }
 
 /* Text-Symbol display settings ... */
 .left-btn .btn-icon,
@@ -460,20 +476,44 @@ body[data-device="Desktop"] .edge-btn:hover .btn-text { opacity: 1; }
     white-space: nowrap;
     writing-mode: vertical-rl;
     text-orientation: upright;
-    letter-spacing: -0.453em;
+    letter-spacing: -0.39em;
+    font-size: 1.3rem;
 }
 .v-brace
 {
-    padding-bottom: 0.465em;
+    padding-bottom: 0.399em;
     display: inline-block;
     transform: rotate(90deg);
 }
 .v-brace:first-child { margin-bottom: -0.65em; }
-.v-brace:last-child  { margin-top:    -0.32em; }
+.v-brace:last-child  { margin-top:    -0.36em; }
 .left-btn .btn-text,
 .return-right .btn-text { transform: rotate(180deg); }
 
 /* The left screen (*) ... */
+.mind-hint
+{
+    display: none;
+}
+body[data-device="Desktop"] .mind-hint
+{
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    margin: 0;
+    color: #444444;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    pointer-events: none;
+    transition: color 0.62s ease;
+}
+body[data-device="Desktop"] .left-screen:has(.mind-person:hover) .mind-hint,
+body[data-device="Desktop"] .left-screen:has(.thought:hover) .mind-hint
+{
+    color: #121212;
+}
 .mind-container
 {
     position: absolute;
@@ -528,17 +568,17 @@ body[data-device="Desktop"] .thought
 }
 body[data-device="Desktop"] .mind-text
 {
-    opacity: 0;
+    opacity: 1;
+    fill: #121212;
 }
 body[data-device="Desktop"] .mind-svg:has(.mind-person:hover) .mind-fill
 {
-    fill: #121212;
+    fill: white;
     stroke: white;
 }
 body[data-device="Desktop"] .mind-svg:has(.mind-person:hover) .mind-text
 {
-    opacity: 1;
-    fill: white;
+    opacity: 0;
 }
 body[data-device="Desktop"] .mind-svg:has(.mind-person:hover) .mind-person
 {
@@ -546,13 +586,12 @@ body[data-device="Desktop"] .mind-svg:has(.mind-person:hover) .mind-person
 }
 body[data-device="Desktop"] .thought:hover .mind-fill
 {
-    fill: #121212;
+    fill: white;
     stroke: white;
 }
 body[data-device="Desktop"] .thought:hover .mind-text
 {
-    opacity: 1;
-    fill: white;
+    opacity: 0;
 }
 
 /* The right screen (and its elements) ... */
@@ -790,5 +829,56 @@ body[data-device="Desktop"] .fc-dot.active { background: #ffffff; }
 .flashcard.anim-out-right { animation: fc-fade-out 0.25s ease forwards; }
 .flashcard.anim-in-left,
 .flashcard.anim-in-right  { animation: fc-fade-in  0.35s ease forwards; }
+
+/* Corner buttons (middle screen only) ... */
+.corner-btn
+{
+    width: 117px;
+    height: 117px;
+    font-size: 1.3rem;
+    padding: 0;
+    display: block;
+    position: absolute;
+}
+.corner-btn span
+{
+    position: absolute;
+    line-height: 1;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+.corner-tl
+{
+    top: 3px;
+    left: 3px;
+    clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+}
+.corner-tl span { left: 31px; top: 34px; }
+.corner-tl .c-default { transform: translate(-50%, -50%) rotate(45deg); }
+.corner-tr
+{
+    top: 3px;
+    right: 3px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+}
+.corner-tr span { left: 78px; top: 32px; }
+.corner-tr .c-default { transform: translate(-50%, -50%) rotate(135deg); }
+.corner-bl
+{
+    bottom: 3px;
+    left: 3px;
+    clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
+}
+.corner-bl span { left: 35px; top: 82px; }
+.corner-bl .c-default { transform: translate(-50%, -50%) rotate(315deg); }
+.corner-br
+{
+    bottom: 3px;
+    right: 3px;
+    clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+}
+.corner-br span { left: 81px; top: 78px; }
+.corner-br .c-default { transform: translate(-50%, -50%) rotate(225deg); }
+.c-default { transition: color 0.5s ease; }
 
 /*** [ @mikroskato62 ] ***/

@@ -1,14 +1,14 @@
-<!--------------------------------------------------------------------------------------------------------------------------|
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-█                                                                                                                           █
-█   ████      ███   ███   ██   ██   ██   ██████    ████     ████    ██   ██    ████      ██      ████    █████      █████   █
-█  ██   ███   ██ ███ ██        ██  ██    ██   ██  ██  ██   ██       ██  ██        ██   ██████   ██  ██   ██        ██   ██  █
-█  ██ ██  █   ██  █  ██   ██   █████     ██       ██  ██    ███     █████      █████     ██     ██  ██   ██████       ███   █
-█  ██    ██   ██     ██   ██   ██  ██    ██       ██  ██      ██    ██  ██    ██  ██     ██     ██  ██   ██   ██    ███     █
-█   ██████    ██     ██   ██   ██   ██   ██        ████    ████     ██   ██    █████      ███    ████    █████    ███████   █
-█                                                                                                                           █
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-|--------------------------------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------|
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█                                                                                                  █
+█   ████    ███   ███ ██ ██   ██ ██████   ████   ████ ██   ██ ████    ██    ████  █████    █████   █
+█  ██   ███ ██ ███ ██    ██  ██  ██   ██ ██  ██ ██    ██  ██     ██ ██████ ██  ██ ██      ██   ██  █
+█  ██ ██  █ ██  █  ██ ██ █████   ██      ██  ██  ███  █████   █████   ██   ██  ██ ██████     ███   █
+█  ██    ██ ██     ██ ██ ██  ██  ██      ██  ██    ██ ██  ██ ██  ██   ██   ██  ██ ██   ██  ███     █
+█   ██████  ██     ██ ██ ██   ██ ██       ████  ████  ██   ██ █████    ███  ████  ██████  ███████  █
+█                                                                                                  █
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+|-------------------------------------------------------------------------------------------------->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,6 +34,7 @@
     </section>
     <section class="screen left-screen">
         <div class="mind-container" id="mindContainer"></div>
+        <p class="mind-hint"># Hover over my figure ...</p>
         <button class="edge-btn return-left" onclick="moveCamera('middle')">
             <span class="btn-icon">〱</span><span class="btn-text"><span class="v-brace">[</span> RETURN <span class="v-brace">]</span></span>
         </button>
@@ -45,17 +46,21 @@
             <p class="subtitle" id="device-label">[ Loading... ]</p>
         </div>
         <button class="edge-btn top-btn" onclick="moveCamera('top')">
-            <span class="btn-icon">〱</span><span class="btn-text">[ ABOUT ]</span>
+            <span class="btn-icon">◄</span><span class="btn-text">[ ABOUT ]</span>
         </button>
         <button class="edge-btn right-btn" onclick="moveCamera('right')">
-            <span class="btn-icon">〱</span><span class="btn-text"><span class="v-brace">[</span> PROJECTS <span class="v-brace">]</span></span>
+            <span class="btn-icon">◄</span><span class="btn-text"><span class="v-brace">[</span> PROJECTS <span class="v-brace">]</span></span>
         </button>
         <button class="edge-btn bottom-btn" onclick="moveCamera('bottom')">
-            <span class="btn-icon">〱</span><span class="btn-text">[ CONTACT ]</span>
+            <span class="btn-icon">◄</span><span class="btn-text">[ CONTACT ]</span>
         </button>
         <button class="edge-btn left-btn" onclick="moveCamera('left')">
-            <span class="btn-icon">〱</span><span class="btn-text"><span class="v-brace">[</span> TECHS <span class="v-brace">]</span></span>
+            <span class="btn-icon">◄</span><span class="btn-text"><span class="v-brace">[</span> SKILLS <span class="v-brace">]</span></span>
         </button>
+        <button class="edge-btn corner-btn corner-tl"><span class="c-default">〱</span></button>
+        <button class="edge-btn corner-btn corner-tr"><span class="c-default">〱</span></button>
+        <button class="edge-btn corner-btn corner-bl"><span class="c-default">〱</span></button>
+        <button class="edge-btn corner-btn corner-br"><span class="c-default">〱</span></button>
     </section>
     <section class="screen right-screen">
         <div class="projects-container">
