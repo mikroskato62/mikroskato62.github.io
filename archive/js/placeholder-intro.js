@@ -1,0 +1,1 @@
+!function(){"use strict";document.addEventListener("site:intro-complete",()=>{document.documentElement.classList.remove("site-cursor-locked","site-dock-pending","site-dock-entering")},{once:!0})}();

@@ -1,0 +1,1 @@
+!function(){"use strict";document.querySelectorAll(".corner-link[data-url]").forEach(e=>{e.addEventListener("click",()=>{window.open(e.dataset.url,"_blank","noopener,noreferrer")})})}();

@@ -1,0 +1,1 @@
+html.site-paused *,html.site-paused ::after,html.site-paused ::before{animation-play-state:paused!important}
